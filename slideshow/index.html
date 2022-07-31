@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Slideshow using html, css and js</title>
+</head>
+<body>
+    <!-- SlideShow Container -->
+    <div class="slideshow-container">
+        <!-- full width image -->
+        <div class="slideshow__item fade">
+            <div class="slideshow__item-number"></div>
+            <img src="img/1.jpg" alt="image">
+            <div class="slideshow__item-text">Flowers</div>
+        </div>
+
+        <div class="slideshow__item fade">
+            <div class="slideshow__item-number"></div>
+            <img src="img/2.jpg" alt="image">
+            <div class="slideshow__item-text">Life moment</div>
+        </div>
+
+        <div class="slideshow__item fade">
+            <div class="slideshow__item-number"></div>
+            <img src="img/3.jpg" alt="image">
+            <div class="slideshow__item-text">Sun rise</div>
+        </div>
+
+        <div class="slideshow__item fade">
+            <div class="slideshow__item-number"></div>
+            <img src="img/4.jpg" alt="image">
+            <div class="slideshow__item-text">Yellow car</div>
+        </div>
+
+        <!-- next and prev button -->
+        <a class="prev" onclick="handleClick(-1)">&#10094;</a>
+        <a class="next" onclick="handleClick(1)">&#10095;</a>
+    </div>
+
+    <!-- dots -->
+    <div class="dots">
+        <span class="dots__dot" onclick="currentSlide(1)"></span>
+        <span class="dots__dot" onclick="currentSlide(2)"></span>
+        <span class="dots__dot" onclick="currentSlide(3)"></span>
+        <span class="dots__dot" onclick="currentSlide(3)"></span>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
