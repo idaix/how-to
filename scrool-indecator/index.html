@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll indecator</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header{
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding-top: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .progress-bar{
+            width: 100%;
+            background: #ccc;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .progress-bar .bar{
+            background-color: rgb(29, 29, 77);
+            width: 0%;
+            height: 8px;
+        }
+
+        main p {
+            margin-top: 80px;
+            width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scroll Indecator</h1>
+            <div class="progress-bar">
+                <div class="bar" id="bar"></div>
+            </div>
+        </header>
+        <main>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique optio eaque modi qui repudiandae vel omnis nihil corrupti nemo alias nesciunt earum quibusdam impedit ex, illo quidem, est corporis pariatur cupiditate aperiam molestiae ipsa illum iure? Facilis dolor repellat qui similique deleniti repudiandae ullam sequi quam voluptatibus ratione molestiae delectus eaque modi exercitationem, laborum fugiat possimus vitae totam consequuntur reiciendis quaerat! Doloremque sit quam, delectus vero voluptatibus expedita perferendis molestiae sequi veniam adipisci dignissimos eveniet nulla quaerat repudiandae numquam maiores soluta deserunt itaque! Voluptate nam, illum porro quasi ex dolores provident eligendi dignissimos. Provident perferendis quidem repellendus voluptatem molestiae vitae.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique optio eaque modi qui repudiandae vel omnis nihil corrupti nemo alias nesciunt earum quibusdam impedit ex, illo quidem, est corporis pariatur cupiditate aperiam molestiae ipsa illum iure? Facilis dolor repellat qui similique deleniti repudiandae ullam sequi quam voluptatibus ratione molestiae delectus eaque modi exercitationem, laborum fugiat possimus vitae totam consequuntur reiciendis quaerat! Doloremque sit quam, delectus vero voluptatibus expedita perferendis molestiae sequi veniam adipisci dignissimos eveniet nulla quaerat repudiandae numquam maiores soluta deserunt itaque! Voluptate nam, illum porro quasi ex dolores provident eligendi dignissimos. Provident perferendis quidem repellendus voluptatem molestiae vitae.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique optio eaque modi qui repudiandae vel omnis nihil corrupti nemo alias nesciunt earum quibusdam impedit ex, illo quidem, est corporis pariatur cupiditate aperiam molestiae ipsa illum iure? Facilis dolor repellat qui similique deleniti repudiandae ullam sequi quam voluptatibus ratione molestiae delectus eaque modi exercitationem, laborum fugiat possimus vitae totam consequuntur reiciendis quaerat! Doloremque sit quam, delectus vero voluptatibus expedita perferendis molestiae sequi veniam adipisci dignissimos eveniet nulla quaerat repudiandae numquam maiores soluta deserunt itaque! Voluptate nam, illum porro quasi ex dolores provident eligendi dignissimos. Provident perferendis quidem repellendus voluptatem molestiae vitae.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique optio eaque modi qui repudiandae vel omnis nihil corrupti nemo alias nesciunt earum quibusdam impedit ex, illo quidem, est corporis pariatur cupiditate aperiam molestiae ipsa illum iure? Facilis dolor repellat qui similique deleniti repudiandae ullam sequi quam voluptatibus ratione molestiae delectus eaque modi exercitationem, laborum fugiat possimus vitae totam consequuntur reiciendis quaerat! Doloremque sit quam, delectus vero voluptatibus expedita perferendis molestiae sequi veniam adipisci dignissimos eveniet nulla quaerat repudiandae numquam maiores soluta deserunt itaque! Voluptate nam, illum porro quasi ex dolores provident eligendi dignissimos. Provident perferendis quidem repellendus voluptatem molestiae vitae.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique optio eaque modi qui repudiandae vel omnis nihil corrupti nemo alias nesciunt earum quibusdam impedit ex, illo quidem, est corporis pariatur cupiditate aperiam molestiae ipsa illum iure? Facilis dolor repellat qui similique deleniti repudiandae ullam sequi quam voluptatibus ratione molestiae delectus eaque modi exercitationem, laborum fugiat possimus vitae totam consequuntur reiciendis quaerat! Doloremque sit quam, delectus vero voluptatibus expedita perferendis molestiae sequi veniam adipisci dignissimos eveniet nulla quaerat repudiandae numquam maiores soluta deserunt itaque! Voluptate nam, illum porro quasi ex dolores provident eligendi dignissimos. Provident perferendis quidem repellendus voluptatem molestiae vitae.</p>
+        </main>
+    </div>
+    <script>
+        window.onscroll = ()=>{handleProgress()};
+
+        function handleProgress(){
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            console.log(winScroll, height, scrolled);
+            document.getElementById('bar').style.width = scrolled + "%"
+
+            
+        }
+    </script>
+</body>
+</html>
